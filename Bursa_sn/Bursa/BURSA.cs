@@ -36,16 +36,6 @@ namespace Bursa
             graphics = graf_prof.panel1.CreateGraphics();
             x_curent = 5;
             y_curent = graf_prof.panel1.Height / 2 - 5;
-            ////GRAF
-            //Pen pen = new Pen(Color.Blue);
-            //pen.Width = 5;
-            ////OX
-            //int y1 = graf_prof.panel1.Height / 2;
-            //int x2 = graf_prof.panel1.Width - 5;
-            //graphics.DrawLine(pen, 5, y1, x2, y1);
-            ////OY
-            //int y2 = graf_prof.panel1.Height - 5;
-            //graphics.DrawLine(pen, 5, 5, 5, y2);
         }
 
         private void button_DeschideBursa_Click(object sender, EventArgs e)
@@ -57,7 +47,6 @@ namespace Bursa
         {
             timer1.Enabled = false;
             string fn = Application.StartupPath+@"\rezultate.txt";
-            //System.IO.File.Create(fn);
             System.IO.File.WriteAllText(fn, act.getProfit().ToString());
 
         }
@@ -99,7 +88,6 @@ namespace Bursa
             //Graphics graphics = graf_prof.panel1.CreateGraphics();
             Pen pen = new Pen(Color.Red);
             pen.Width = 5;
-            //int x=
             if (last_profit < act.getProfit())
             {
                 graphics.DrawLine(pen, x_curent, y_curent, x_curent + 1, y_curent - 1);
@@ -122,7 +110,7 @@ namespace Bursa
 
         private void graficProfitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            graf_prof.ShowDialog();
+            graf_prof.Show();
         }
 
         private void BURSA_Paint(object sender, PaintEventArgs e)
@@ -137,14 +125,6 @@ namespace Bursa
             //OY
             int y2 = graf_prof.panel1.Height - 5;
             graphics.DrawLine(pen, 5, 5, 5, y2);
-            //firstpoint
-            //x_curent = 5;
-            //y_curent = graf_prof.panel1.Height / 2 - 5;
-            //pen.Color = Color.Red;
-            //pen.Width = 5;
-            //graphics.DrawLine(pen, x_curent, y_curent, x_curent + 1, y_curent - 1);
-            //x_curent++;
-            //y_curent--;
         }
     }
 }

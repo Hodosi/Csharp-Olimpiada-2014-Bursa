@@ -217,8 +217,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_Profit;
+        public System.Windows.Forms.Timer timer1;
     }
 }
