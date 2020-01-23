@@ -36,7 +36,7 @@ namespace Bursa
 
         }
 
-        public DataTable getBursaInitiala()
+        public DataTable getBursa()
         {
             SqlCommand command = new SqlCommand();
             command.Connection = conn.GetConnection();
@@ -47,5 +47,87 @@ namespace Bursa
             adapter.Fill(table);
             return table;
         }
+
+        public void updateCrestere(int r, string nume)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "Update ActiunileMele Set Crescut_Scazut=@r Where Denumire=@nume ";
+            command.Connection = conn.GetConnection();
+
+            command.Parameters.Add("r", SqlDbType.Int).Value = r;
+            command.Parameters.Add("nume", SqlDbType.VarChar).Value = nume;
+
+            conn.openConnection();
+            command.ExecuteNonQuery();
+            conn.closeConnection();
+        }
+
+        public void updateValMomentana()
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "Update ActiunileMele Set Valoare_Actiune_Momentana=Valoare_Actiune_Momentana+Crescut_Scazut";
+            command.Connection = conn.GetConnection();
+
+            conn.openConnection();
+            command.ExecuteNonQuery();
+            conn.closeConnection();
+        }
+        public void updateValTotalInit()
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "Update ActiunileMele Set Total_Valoare_Initiala=Numar_Actiuni*Valoare_Actiune_Initial";
+            command.Connection = conn.GetConnection();
+
+            conn.openConnection();
+            command.ExecuteNonQuery();
+            conn.closeConnection();
+        }
+
+        public void updateValTotalMoment()
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "Update ActiunileMele Set Total_Valoare_Momentana=Numar_Actiuni*Valoare_Actiune_Momentana";
+            command.Connection = conn.GetConnection();
+
+            conn.openConnection();
+            command.ExecuteNonQuery();
+            conn.closeConnection();
+        }
+
+        public void updateProfitMoment()
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "Update ActiunileMele Set Profit_Pierdere_Momentana=Numar_Actiuni*Crescut_Scazut";
+            command.Connection = conn.GetConnection();
+
+            conn.openConnection();
+            command.ExecuteNonQuery();
+            conn.closeConnection();
+        }
+
+        public void updateProfitTotal()
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = "Update ActiunileMele Set Profit_Pierdere_Totala=Total_Valoare_Initiala*Profit_Pierdere_Momentana";
+            command.Connection = conn.GetConnection();
+
+            conn.openConnection();
+            command.ExecuteNonQuery();
+            conn.closeConnection();
+        }
+
+        public int getProfit()
+        {
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn.GetConnection();
+            command.CommandText = "Select SUM(Profit_Pierdere_Totala) From ActiunileMele";
+
+            conn.openConnection();
+            int s = Convert.ToInt32(command.ExecuteScalar()); ;
+            conn.closeConnection();
+
+            return s;
+        }
+
     }
 }

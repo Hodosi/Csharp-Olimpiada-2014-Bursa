@@ -6,3 +6,12 @@ D:\Desktop\2014\Bursa_sn\Bursa\bin\Debug\Bursa.exe
 D:\Desktop\2014\Bursa_sn\Bursa\bin\Debug\Bursa.pdb
 D:\Desktop\2014\Bursa_sn\Bursa\obj\Debug\Bursa.exe
 D:\Desktop\2014\Bursa_sn\Bursa\obj\Debug\Bursa.pdb
+D:\Desktop\Bursa\Csharp-Olimpiada-2014-Bursa\Bursa_sn\Bursa\bin\Debug\Bursa.exe
+D:\Desktop\Bursa\Csharp-Olimpiada-2014-Bursa\Bursa_sn\Bursa\bin\Debug\Bursa.pdb
+D:\Desktop\Bursa\Csharp-Olimpiada-2014-Bursa\Bursa_sn\Bursa\obj\Debug\Bursa.csprojAssemblyReference.cache
+D:\Desktop\Bursa\Csharp-Olimpiada-2014-Bursa\Bursa_sn\Bursa\obj\Debug\Bursa.BURSA.resources
+D:\Desktop\Bursa\Csharp-Olimpiada-2014-Bursa\Bursa_sn\Bursa\obj\Debug\Bursa.Properties.Resources.resources
+D:\Desktop\Bursa\Csharp-Olimpiada-2014-Bursa\Bursa_sn\Bursa\obj\Debug\Bursa.csproj.GenerateResource.cache
+D:\Desktop\Bursa\Csharp-Olimpiada-2014-Bursa\Bursa_sn\Bursa\obj\Debug\Bursa.exe
+D:\Desktop\Bursa\Csharp-Olimpiada-2014-Bursa\Bursa_sn\Bursa\obj\Debug\Bursa.pdb
+D:\Desktop\Bursa\Csharp-Olimpiada-2014-Bursa\Bursa_sn\Bursa\obj\Debug\Bursa.Grafic_Profit.resources

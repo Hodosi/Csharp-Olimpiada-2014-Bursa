@@ -39,6 +39,8 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_Profit = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,6 +78,7 @@
             this.graficProfitToolStripMenuItem.Name = "graficProfitToolStripMenuItem";
             this.graficProfitToolStripMenuItem.Size = new System.Drawing.Size(265, 36);
             this.graficProfitToolStripMenuItem.Text = "Grafic Profit";
+            this.graficProfitToolStripMenuItem.Click += new System.EventHandler(this.graficProfitToolStripMenuItem_Click);
             // 
             // button_DeschideBursa
             // 
@@ -139,6 +142,7 @@
             0,
             0,
             0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // dataGridView1
             // 
@@ -153,14 +157,35 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(278, 438);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(190, 25);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Profit/Pierdere Total:";
+            // 
+            // textBox_Profit
+            // 
+            this.textBox_Profit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Profit.Location = new System.Drawing.Point(494, 435);
+            this.textBox_Profit.Name = "textBox_Profit";
+            this.textBox_Profit.ReadOnly = true;
+            this.textBox_Profit.Size = new System.Drawing.Size(151, 30);
+            this.textBox_Profit.TabIndex = 7;
             // 
             // BURSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1260, 472);
+            this.Controls.Add(this.textBox_Profit);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
@@ -171,6 +196,7 @@
             this.Name = "BURSA";
             this.Text = "BURSA";
             this.Load += new System.EventHandler(this.BURSA_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.BURSA_Paint);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -192,5 +218,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox_Profit;
     }
 }
